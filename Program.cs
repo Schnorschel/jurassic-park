@@ -78,6 +78,8 @@ namespace jurassic_park
       Console.WriteLine("--------------------------------------------------");
 
       DisplayListOfDinos(JurassicPark.OrderByDescending(dino => dino.Weight).Take(3));
+
+      Console.WriteLine("--------------------------------------------------");
     }
 
     static void ViewDiet()
@@ -88,6 +90,7 @@ namespace jurassic_park
       {
         Console.WriteLine($"{dino.Name} is a {dino.DietType}.");
       }
+      Console.WriteLine("----------------------------------------------");
     }
 
     static void Quit()
@@ -106,8 +109,8 @@ namespace jurassic_park
         Console.Write($"{dino.Name}"); Console.WriteLine(", since " + dino.DateAcquired.ToString("M/dd/yyyy"));
         Console.WriteLine(new string('-', dino.Name.Length + dino.DateAcquired.ToString("M/dd/yyyy").Length + 8));
         Console.WriteLine($"  is a {dino.DietType},");
-        Console.WriteLine("  weighs" + dino.Weight.ToString() + " lbs,");
-        Console.WriteLine("  lives in enclosure {dino.EnclosureNumber}.");
+        Console.WriteLine("  weighs " + dino.Weight.ToString() + " lbs,");
+        Console.WriteLine($"  lives in enclosure {dino.EnclosureNumber}.");
         if (dinoList.Last() == dino)
         {
           Console.WriteLine("------------------------------------------------------");
